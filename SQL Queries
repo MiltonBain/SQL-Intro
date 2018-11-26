@@ -1,0 +1,14 @@
+CREATE VIEW ProductValues AS SELECT name FROM Product WHERE qty > 0 
+
+SELECT name, category FROM Product
+
+SELECT Product.name, Category.name FROM Product INNER JOIN Category on Product.category = Category.id
+
+SELECT Product.name, Category.name, Company.name FROM Product LEFT JOIN Category on Product.category = Category.id LEFT JOIN Company on Product.company = Company.id
+[UPDATE Company SET name = 'Stanley Black and Decker' WHERE name = 'Stanley']
+
+
+SELECT Product.name, Category.name, Company.name FROM Product LEFT JOIN Category on Product.category = Category.id WHERE Product.price > 10
+[SELECT Product.name, Category.name, Company.name FROM Product LEFT JOIN Category on Product.category = Category.id LEFT JOIN Company on Product.company = Company.id WHERE Company.name = 'Stanley Black and Decker']
+
+DELETE FROM Company WHERE Company.name = 'Crest'
